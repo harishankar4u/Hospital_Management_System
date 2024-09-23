@@ -22,7 +22,7 @@ namespace Hospitalpage.Controllers
             if (ModelState.IsValid)
             {
                var resp= await _mediator.Send(new CretaeAppoinmentCommand(value));
-                return RedirectToAction("Index", "Home"); // Redirect to a confirmation page or another appropriate action
+                return RedirectToAction("Index", "Home"); // Redirect to a confirmation page or another appropriate actions
             }
 
             return View("OpenForm", value);
