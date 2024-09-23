@@ -1,0 +1,51 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Hospital</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>My Hospital</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Doctors</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Appointment</a></li>
+                <li><a asp-controller="Appoinment" asp-action="GetAllAppoinment" method="get"> GetAppoinment</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Your Health, Our Priority</h2>
+            <p>Discover world-class healthcare at My Hospital.</p>
+            <a asp-controller="Home" asp-action="OpenForm" class="btn btn-primary">Book Appointments</a>
+            
+        </section>
+
+        <section class="features">
+            <h2>Our Services</h2>
+            <div class="feature-card">
+                <img src="image\hospital.png" alt="Cardiology">
+                <h3>Cardiology</h3>
+                <p>Expert heart care.</p>
+            </div>
+            <div class="feature-card">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 My Hospital. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Hospitalpage.Infrastructure.Response.AppoinmentResponse>
+
+@{
+    ViewData["Title"] = "GetAllAppoinment";
+}
+
+<h1>GetAllAppoinment</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MobileNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sex)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DoctorName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AppoinmentTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AppoinmentStatus)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MobileNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sex)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DoctorName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AppoinmentTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AppoinmentStatus)
+            </td>
+           
+        </tr>
+}
+    </tbody>
+</table>
