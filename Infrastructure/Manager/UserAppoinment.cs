@@ -2,20 +2,31 @@
 using Hospitalpage.Models;
 using Microsoft.EntityFrameworkCore;
 using Hospitalpage.Infrastructure.Response;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace Hospitalpage.Infrastructure.Manager
 {
     public class UserAppoinment : IAppoinment
     {
+       // private readonly IMemoryCache _memoryCache;
         private readonly ApplicationDbContext _dbContext;
         public UserAppoinment(ApplicationDbContext dbContext)
         {
+           // _memoryCache=memoryCache;
             _dbContext = dbContext;
         }
 
         public async Task<string> createAppoinmentAsync(Appoinment value)
         {
-            await _dbContext.Set<Appoinment>().AddAsync(value);
+            //var settime = new MemoryCacheEntryOptions
+            //{
+            //    AbsoluteExpirationRelativeToNow=TimeSpan.FromMinutes(30),
+                
+            //};
+            //string cacheKey = $"Appoinment_{value.MobileNumber}";
+            //_memoryCache.Set(cacheKey, value, settime);
+
+            //await _dbContext.Set<Appoinment>().AddAsync(value);
             // Save changes to the database
             await _dbContext.SaveChangesAsync();
             return "Appointment created successfully!";
